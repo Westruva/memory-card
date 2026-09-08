@@ -1,0 +1,187 @@
+.game-shell {
+	width: min(100%, 900px);
+	margin: 0 auto;
+	padding: 32px 20px 48px;
+	box-sizing: border-box;
+}
+
+.topbar {
+	display: flex;
+	align-items: end;
+	justify-content: space-between;
+	gap: 16px;
+	margin-bottom: 24px;
+}
+
+.eyebrow {
+	margin: 0 0 6px;
+	text-transform: uppercase;
+	letter-spacing: 0.22em;
+	font-size: 0.72rem;
+	color: #a78bfa;
+	font-weight: 700;
+}
+
+h1 {
+	margin: 0;
+	font-size: clamp(2.2rem, 5vw, 3.3rem);
+}
+
+.restart-button {
+	border: none;
+	border-radius: 999px;
+	background: linear-gradient(135deg, #8b5cf6, #ec4899);
+	color: white;
+	font-weight: 700;
+	padding: 0.9rem 1.4rem;
+	cursor: pointer;
+	transition:
+		transform 0.2s ease,
+		box-shadow 0.2s ease;
+	box-shadow: 0 12px 24px rgba(168, 85, 247, 0.25);
+}
+
+.restart-button:hover {
+	transform: translateY(-2px);
+}
+
+.status-panel {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 16px;
+	align-items: center;
+	background: rgba(15, 23, 42, 0.72);
+	border: 1px solid rgba(148, 163, 184, 0.2);
+	border-radius: 20px;
+	padding: 16px 18px;
+	margin-bottom: 24px;
+}
+
+.status-panel > div {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 6px;
+}
+
+.label {
+	font-size: 0.76rem;
+	text-transform: uppercase;
+	letter-spacing: 0.14em;
+	color: #cbd5e1;
+}
+
+.status-panel strong {
+	font-size: clamp(1.5rem, 3vw, 2.2rem);
+	color: #f8fafc;
+}
+
+.status-panel p {
+	color: #e2e8f0;
+	text-align: right;
+	font-size: 0.98rem;
+}
+
+.board {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	gap: 16px;
+}
+
+.memory-card {
+	position: relative;
+	width: 100%;
+	aspect-ratio: 1;
+	padding: 0;
+	border: none;
+	border-radius: 18px;
+	background: rgba(15, 23, 42, 0.8);
+	cursor: pointer;
+	overflow: hidden;
+	box-shadow: 0 12px 24px rgba(15, 23, 42, 0.2);
+	transition: transform 0.2s ease;
+}
+
+.memory-card:hover {
+	transform: translateY(-2px);
+}
+
+.memory-card img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+}
+
+@media (max-width: 680px) {
+	.topbar {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.status-panel {
+		grid-template-columns: 1fr;
+		text-align: center;
+	}
+
+	.status-panel p {
+		text-align: center;
+	}
+
+	.board {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+}
+
+/* Modal Overlay Backdrop */
+.modal-overlay {
+	position: fixed;
+	inset: 0;
+	background-color: rgba(0, 0, 0, 0.75);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 1000;
+	backdrop-filter: blur(4px);
+}
+
+/* Modal Content Box */
+.modal-card {
+	background-color: #1e293b;
+	color: #f8fafc;
+	padding: 2.5rem;
+	border-radius: 12px;
+	text-align: center;
+	max-width: 400px;
+	width: 90%;
+	box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+	border: 1px solid #334155;
+}
+
+.modal-card h2 {
+	margin-top: 0;
+	font-size: 1.75rem;
+	color: #38bdf8;
+}
+
+.modal-card p {
+	margin: 1rem 0 1.5rem;
+	font-size: 1.1rem;
+	color: #cbd5e1;
+}
+
+.modal-card .primary-button {
+	background-color: #0284c7;
+	color: white;
+	border: none;
+	padding: 0.75rem 1.5rem;
+	font-size: 1rem;
+	font-weight: 600;
+	border-radius: 6px;
+	cursor: pointer;
+	transition: background-color 0.2s ease;
+}
+
+.modal-card .primary-button:hover {
+	background-color: #0369a1;
+}
